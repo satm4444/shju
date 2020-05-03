@@ -25,7 +25,7 @@ class Homepage extends StatelessWidget {
                 width: forWidth,
                 height: forheight * 0.1,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.only(
@@ -40,34 +40,93 @@ class Homepage extends StatelessWidget {
                             color: AppColor.dividerColor),
                       ),
                     ),
-                    Row(
-                      children: <Widget>[
-                        IconButton(
-                          icon: Icon(Icons.search),
-                          onPressed: null,
-                          iconSize: 28,
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.add_shopping_cart),
-                          onPressed: null,
-                          iconSize: 24,
-                        ),
-                      ],
+                    SizedBox(
+                      width: 120,
                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 4.0),
+                      child: Container(
+                        height: 33.5,
+                        width: 145,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.white,
+                            border: Border.all(
+                                color: Colors.black.withOpacity(0.1))),
+                        child: Row(
+                          //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            SizedBox(
+                              width: 12,
+                            ),
+                            Text(
+                              "Search..",
+                              style: TextStyle(
+                                  color: Colors.black.withOpacity(0.3)),
+                            ),
+                            SizedBox(
+                              width: 46,
+                            ),
+                            Icon(
+                              Icons.search,
+                              color: AppColor.dividerColor,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    // Row(
+                    //   children: <Widget>[
+                    //     Padding(
+                    //       padding: const EdgeInsets.only(top: 8.0),
+                    //       child: IconButton(
+                    //         icon: Icon(Icons.search),
+                    //         onPressed: null,
+                    //         iconSize: 28,
+                    //       ),
+                    //     ),
+                    //     // IconButton(
+                    //     //   icon: Icon(Icons.add_shopping_cart),
+                    //     //   onPressed: null,
+                    //     //   iconSize: 24,
+                    //     // ),
+                    //     SizedBox(
+                    //       width: 10,
+                    //     ),
+                    //   ],
+                    // ),
                   ],
                 ),
               ),
-              // Padding(
-              //   padding: const EdgeInsets.only(left: 19.0),
-              //   child: Text(
-              //     "Trending",
-              //     style: TextStyle(
-              //       fontSize: 17,
-              //       fontFamily: 'Heading',
-              //       fontWeight: FontWeight.bold,
-              //     ),
-              //   ),
-              // ),
+              Row(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(left: 19.0),
+                    child: Text(
+                      "Trending",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'Heading',
+                        color: Colors.black.withOpacity(0.7),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 220,
+                  ),
+                  Text(
+                    "See all>",
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontFamily: 'Heading',
+                      color: Color(0xff4CC4C0),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
               Container(
                 // color: Colors.red,
                 height: forheight * 0.29,

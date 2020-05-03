@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
+
 import 'package:line_icons/line_icons.dart';
 import 'package:shju/bottom_nav_bar_pages/homepage.dart';
 import 'package:shju/test.dart';
@@ -18,56 +18,56 @@ class _BottomBarState extends State<BottomBar> {
     Test(),
     Tests(),
   ];
+  void _selectedPage(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages[_selectedIndex],
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          // borderRadius: BorderRadius.circular(25),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 20,
-              color: Colors.black.withOpacity(.04),
-            )
+        height: 49,
+        width: double.infinity,
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.black.withOpacity(0.4),
+          onTap: _selectedPage,
+          currentIndex: _selectedIndex,
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(
+                LineIcons.home,
+                size: 24,
+              ),
+              title: SizedBox(),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                LineIcons.heart_o,
+                size: 24,
+              ),
+              title: SizedBox(),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                LineIcons.cart_arrow_down,
+                size: 24,
+              ),
+              title: SizedBox(),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                LineIcons.user,
+                size: 24,
+              ),
+              title: SizedBox(),
+            ),
           ],
-        ),
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 6),
-            child: GNav(
-                gap: 8,
-                activeColor: Colors.white,
-                iconSize: 24,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 4),
-                duration: Duration(milliseconds: 800),
-                tabBackgroundColor: Colors.grey[500],
-                tabs: [
-                  GButton(
-                    icon: LineIcons.home,
-                    text: 'Home',
-                  ),
-                  GButton(
-                    icon: LineIcons.heart_o,
-                    text: 'Favourites',
-                  ),
-                  GButton(
-                    icon: LineIcons.cart_arrow_down,
-                    text: 'Cart',
-                  ),
-                  GButton(
-                    icon: LineIcons.user,
-                    text: 'Account',
-                  ),
-                ],
-                selectedIndex: _selectedIndex,
-                onTabChange: (index) {
-                  setState(() {
-                    _selectedIndex = index;
-                  });
-                }),
-          ),
         ),
       ),
     );

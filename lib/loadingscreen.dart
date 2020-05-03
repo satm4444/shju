@@ -13,7 +13,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
   void initState() {
     super.initState();
     Future.delayed(
-      Duration(seconds: 2),
+      Duration(seconds: 3),
       () {
         Navigator.pushReplacementNamed(context, "/bottombar");
       },
@@ -42,8 +42,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
             SizedBox(
               height: screenheight * 0.05,
             ),
-            SpinKitSquareCircle(
-              color: Colors.grey,
+            SpinKitCircle(
+              color: AppColor.dividerColor,
               size: 70.0,
             ),
           ],

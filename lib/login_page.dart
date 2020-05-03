@@ -127,8 +127,8 @@ class _LoginPageState extends State<LoginPage> {
                     borderRadius: BorderRadius.circular(25),
                     child: GestureDetector(
                       onTap: () {
-                        if (usernameCon.text == "done" &&
-                            passCon.text == "ios") {
+                        if (usernameCon.text == "satyam" &&
+                            passCon.text == "passit") {
                           Navigator.pushReplacementNamed(context, "/load");
                         } else {}
                       },
